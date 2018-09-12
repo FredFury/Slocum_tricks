@@ -5,7 +5,7 @@ import ftplib
 #send file to FTP server
 def update():
     print("updating git...")
-    os.system("git commit -m 'updated location' slocum.geojson")
+    os.system("git commit -m 'updated location' slocum.csv")
     os.system("git push")
 
 
@@ -29,7 +29,7 @@ file = open ( 'surface.dat',"r" )
 lineList = file.readlines()
 file.close()
 lastLine = lineList[-1]
-time =  lastLine.split(" ; ")[1]
+time =  lastLine.split(" ; ")[5].strip( '\n' )
 lat = lastLine.split(" ; ")[2]
 lon = lastLine.split(" ; ")[3]
 mission = lastLine.split(" ; ")[4]
