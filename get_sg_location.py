@@ -1,0 +1,140 @@
+import os
+import sys
+import urllib.request
+import paramiko
+import datetime
+import numpy
+import simplejson
+import json
+from netCDF4 import Dataset
+
+
+#send file to FTP server
+def update(sg):
+    print("updating git...")
+    cmd  = "git commit -m 'updated location'" + sg +".json"
+    os.system(cmd)
+    os.system("git push")
+
+
+#convert to DD.DDD
+def convertDecimalDegrees(coord):
+	lenghtOfDegrees = len(coord)-6
+	degrees = float(coord[:lenghtOfDegrees])
+	number1 = coord.split(".")[0][-2:]
+	number2 = coord.split(".")[1]
+	decimalMinutes = number1 + "." + number2
+	decimalMinutes = float(decimalMinutes)
+	decimalOfDegree = decimalMinutes/60
+	if degrees < 0:
+		decimalOfDegree = decimalOfDegree * -1.0
+	#print degrees,decimalOfDegree
+	dd = degrees + decimalOfDegree
+	return dd
+
+def retrieveFile(sg):
+    # Open a transport
+    host = "seaglider.socco.org.za"
+    port = 22
+    transport = paramiko.Transport((host, port))
+    password = "soccopilot"
+    username = "pilot"
+    transport.connect(username = username, password = password)
+    sftp = paramiko.SFTPClient.from_transport(transport)
+
+    path = '/home/sg573/GINA2018/SEATRIALS/'
+    fileList = sftp.listdir(path)
+    for filename in fileList:
+        if filename.endswith('.nc') and filename.startswith('p'):
+            print(filename)
+            targetFile = filename
+            break;
+    outputFile = sg+"data.nc"
+    sftp.get(path+filename,outputFile)
+    sftp.close()
+    transport.close()
+
+def read_NC(nc_f,sg):
+    data = []
+    #data['data'] = []
+    dataDict = {}
+    nc_fid = Dataset(nc_f, 'r')
+    #Globals
+    #########################
+    dataDict["project"] = nc_fid.project
+    dataDict["platform_id"] = nc_fid.platform_id
+    dataDict["glider"] = int(nc_fid.glider)
+    dataDict["lat"] = nc_fid.geospatial_lat_min
+    dataDict["lon"] = nc_fid.geospatial_lon_min
+    dataDict["instruments"] = nc_fid.instrument
+    dataDict["dive_number"] = int(nc_fid.dive_number)
+    dataDict["start_time"] = int(nc_fid.start_time)
+    dataDict["mission_number"] = int(nc_fid.mission)
+    start_time = int(nc_fid.start_time)
+    stime =  datetime.datetime.fromtimestamp(start_time).strftime('%d-%m-%Y %H:%M:%S')
+    dataDict["start_time_human"] = stime
+    mission_number = int(nc_fid.mission)
+    dive_number = int(nc_fid.dive_number)
+
+    # cmdfile parameters
+    #########################
+    dataDict["d_tgt"] = int(nc_fid.variables["log_D_TGT"][:])
+    dataDict["d_abort"] = int(nc_fid.variables["log_D_ABORT"][:])
+    dataDict["altim_ping_depth"] = int(nc_fid.variables["log_ALTIM_PING_DEPTH"][:])
+    dataDict["t_dive"] = int(nc_fid.variables["log_T_DIVE"][:])
+    dataDict["t_abort"] = int(nc_fid.variables["log_T_ABORT"][:])
+    dataDict["t_mission"] = int(nc_fid.variables["log_T_MISSION"][:])
+    dataDict["c_vbd"] = int(nc_fid.variables["log_C_VBD"][:])
+    dataDict["c_pitch"] = int(nc_fid.variables["log_C_PITCH"][:])
+    dataDict["c_roll_climb"] = int(nc_fid.variables["log_C_ROLL_CLIMB"][:])
+    dataDict["c_roll_dive"] = int(nc_fid.variables["log_C_ROLL_DIVE"][:])
+    dataDict["sm_cc"] = int(nc_fid.variables["log_SM_CC"][:])
+    dataDict["sim_pitch"] = int(nc_fid.variables["log_SIM_PITCH"][:])
+    dataDict["max_buoy"] = int(nc_fid.variables["log_MAX_BUOY"][:])
+    #print nc_fid.variables["gc_roll_retries"][:]
+    dataDict["gc_roll_retries"] = sum(nc_fid.variables["gc_roll_retries"][:])
+    dataDict["gc_roll_errors"] = sum(nc_fid.variables["gc_roll_errors"][:])
+    dataDict["gc_pitch_retries"] = sum(nc_fid.variables["gc_pitch_retries"][:])
+    dataDict["gc_pitch_errors"] = sum(nc_fid.variables["gc_pitch_errors"][:])
+    dataDict["gc_vbd_retries"] = sum(nc_fid.variables["gc_vbd_retries"][:])
+    dataDict["gc_vbd_errors"] = sum(nc_fid.variables["gc_vbd_errors"][:])
+
+    # Datasets
+    #########################
+    # time_data =  nc_fid.variables["time"][:]
+    # time_data = map(int, time_data)
+    # dataDict["time_data"] = time_data
+    # print(min(time_data))
+    # print(max(time_data))
+    # duration = (max(time_data) - min(time_data))/60
+    # dataDict["duration"] = int(round(duration))
+    # dataDict["buoyancy_data"]  = map(float, nc_fid.variables["buoyancy"][:])
+    # dataDict["eng_rollCtl_data"] = map(float,nc_fid.variables["eng_rollCtl"][:])
+    # dataDict["eng_pitchCtl_data"] = map(float, nc_fid.variables["eng_pitchCtl"][:])
+    #
+    # depth_data  =  nc_fid.variables["depth"][:]
+    # depth_data = map(float, depth_data)
+    # dataDict["depth_data"] = map(lambda x: -1*x, depth_data) #depth_data
+    # dataDict["depth"] = int(round(max(depth_data)))
+
+    json_file = "%s_%s_data.json" % (sg,mission_number)
+    dataDict["file_name"] = json_file
+
+    data.append(dataDict)
+    print (data)
+    outputfile = "/root/gliders/"+sg + ".json"
+    #with open(outputfile, 'w') as file:
+    #    file.write(simplejson.dumps(data))
+    with open(outputfile, 'w') as f:
+        for item in data:
+            f.write("%s\n" % item)
+
+def main():
+    arg = sys.argv[1]
+    retrieveFile(arg)
+    outputFile = arg+"data.nc"
+    read_NC(outputFile,arg)
+    update(arg)
+
+main()
+
