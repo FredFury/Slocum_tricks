@@ -174,9 +174,9 @@ def main():
     list_file_reader = open ( 'list',"r" )
     lineList = list_file_reader.readlines()
     last_file = lineList[-1].split(' ')[-1:][0].rstrip()
-
+    print(last_file)
     output = "slocum.dat"
-    address = 'ftp://%s:%s@%s%s%s' % (usr,psswrd,host,path,last_file)
+    #address = 'ftp://%s:%s@%s%s%s' % (usr,psswrd,host,path,last_file)
     #print address, output
 
     findData(output,last_file) ## scrape a log and append the data to a CSV
