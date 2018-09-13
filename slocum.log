@@ -1,0 +1,316 @@
+Connection Event: Carrier Detect found.  1493    Iridium console active and ready...
+Vehicle Name: socco_461
+Curr Time: Thu Sep 13 07:21:38 2018 MT:    1493
+DR  Location: -2940.213 N  3115.097 E measured    1263.01 secs ago
+GPS TooFar:   -2937.061 N  3118.287 E measured     49.473 secs ago
+GPS Invalid : -2940.325 N  3114.989 E measured    1071.46 secs ago
+GPS Location: -2940.213 N  3115.097 E measured    1267.03 secs ago
+   sensor:c_wpt_lat(lat)=-2946.31210002481         1e+308 secs ago
+   sensor:c_wpt_lon(lon)=3109.49189999401          1e+308 secs ago
+   sensor:m_battery(volts)=14.6557517356503         4.208 secs ago
+   sensor:m_coulomb_amphr(amp-hrs)=0.410874992609024      4.387 secs ago
+   sensor:m_coulomb_amphr_total(amp-hrs)=8.68893799268539      4.402 secs ago
+   sensor:m_final_water_vx(m/s)=0                  1e+308 secs ago
+   sensor:m_final_water_vy(m/s)=0                  1e+308 secs ago
+   sensor:m_iridium_signal_strength(nodim)=5       16.746 secs ago
+   sensor:m_leakdetect_voltage(volts)=2.49847374847375      8.416 secs ago
+   sensor:m_leakdetect_voltage_forward(volts)=2.5      8.426 secs ago
+   sensor:m_lithium_battery_relative_charge(%)=94.3209555603363      4.618 secs ago
+   sensor:m_tot_num_inflections(nodim)=1238        1e+308 secs ago
+   sensor:m_vacuum(inHg)=8.74154285714286           4.597 secs ago
+   sensor:m_water_vx(m/s)=0                        1e+308 secs ago
+   sensor:m_water_vy(m/s)=0                        1e+308 secs ago
+   sensor:u_use_current_correction(nodim)=1        1e+308 secs ago
+   sensor:x_last_wpt_lat(lat)=-2952.6059           1e+308 secs ago
+   sensor:x_last_wpt_lon(lon)=3102.6087            1e+308 secs ago
+ABORT HISTORY: total since reset: 2
+ABORT HISTORY: last abort cause: MS_ABORT_SAMEDEPTH_FOR
+ABORT HISTORY: last abort details: 
+ABORT HISTORY: last abort time: 2018-09-13T06:42:10
+ABORT HISTORY: last abort segment: socco_461-2018-255-1-0 (0322.0000)
+ABORT HISTORY: last abort mission: lastgasp.mi
+  1494    No login script found for processing.
+
+
+GliderDos N -1 >cd missionfiles
+
+error code -1
+GliderDos N -1 >dir
+
+
+ Volume in drive C is UNIT 461 MB
+ Volume Serial Number is CA96-221A
+ Directory of C:\
+
+APP            <DIR>         08-30-18  8:00a
+BIN            <DIR>         08-30-18  8:00a
+CONFIG         <DIR>         08-30-18  8:00a
+LOGS           <DIR>         08-30-18  8:03a
+MAFILES        <DIR>         08-30-18  8:03a
+MISSIONS       <DIR>         08-30-18  8:03a
+SENTLOGS       <DIR>         08-30-18  8:04a
+STATE          <DIR>         08-30-18  8:00a
+
+         0 file(s)               0 bytes
+         8 dir(s)    2,077,491,200 bytes free
+
+GliderDos N -1 >cd missions
+
+\MISSIONS
+
+GliderDos N -1 >dir
+
+
+ Volume in drive C is UNIT 461 MB
+ Volume Serial Number is CA96-221A
+ Directory of C:\MISSIONS\
+
+.              <DIR>         08-30-18  8:21a
+..             <DIR>         08-30-18  8:21a
+AB_INIT.MI              498  05-23-14  2:10p
+BATHTUB.MI            5,580  05-23-14  2:10p
+BT1.MI                5,177  05-28-14  8:00p
+BT2.MI                4,864  05-28-14  8:00p
+CALM_DAY.MI             729  05-23-14  2:10p
+CNSTDPTH.MI           2,296  05-28-14  6:09p
+FREDSIM.MI            3,754  11-12-15  1:42p
+HOLD.MI               8,359  05-23-14  2:10p
+HOME.MI               5,445  11-12-15  1:42p
+IDLE.MI               1,221  05-28-14  6:09p
+INFLOOP.MI            2,611  05-28-14  6:09p
+INI0.MI               6,731  05-23-14  2:10p
+INI1.MI               6,416  11-12-15  1:42p
+INI2.MI               6,309  11-12-15  1:42p
+INI3.MI               7,190  11-12-15  1:42p
+INITIAL.MI            8,359  05-23-14  2:10p
+LASTGASP.MI           8,359  05-23-14  2:10p
+LOADSIM.MI            3,983  11-28-17 11:21a
+LOWBATT.MI            2,404  05-28-14  6:09p
+OOBABORT.MI           2,076  05-28-14  6:09p
+OVERTIME.MI           1,922  05-28-14  6:09p
+OVRDEPTH.MI           1,929  05-28-14  6:09p
+PAUSEHLD.MI           6,932  05-23-14  2:10p
+ROBBENIS.MI           5,449  11-17-15 11:20a
+SCI_OFF.MI              365  05-23-14  2:10p
+SCI_ON.MI               362  05-23-14  2:10p
+SEATRIAL.MI           5,449  11-12-15  1:42p
+SETPITCH.MI             414  05-23-14  2:10p
+SETSHAL.MI              336  05-23-14  2:10p
+STATUS.MI             2,003  05-23-14  2:10p
+STOCK.MI              5,489  05-23-14  2:10p
+STOCKSA.MI            5,490  04-09-15  8:57a
+STORM.MI              6,151  01-14-18  4:14a
+WATERCLR.MI             335  05-23-14  2:10p
+GINA_TRI.MI           6,173  09-05-18 11:02a
+1000M.MI              6,108  09-12-18  5:05p
+500M.MI               6,127  09-12-18  5:06p
+100M.MI               6,127  09-12-18  5:08p
+
+        38 file(s)         159,522 bytes
+         2 dir(s)    2,077,491,200 bytes free
+
+GliderDos N -1 >zs lastgasp.mi
+Enumerating files; patience
+Checking for dupes; one dot for every 10 files
+.
+About to send 1 files
+Prechecking is not necessary for this invocation
+  1624 64 save_and_change_sensors()....
+          Changed u_use_ctd_depth_for_flying from 0 to 0
+          Changed c_science_on from 1 to 0
+  1624    save_and_change_sensors()....
+          Changed c_science_printout from 0 to 0
+Waiting for motors idle
+START
+**B00000000000000? 1690    restore_sensors()....
+          Restored u_use_ctd_depth_for_flying from 0 to 0
+          Restored c_science_on from 0 to 1
+  1690    restore_sensors()....
+  1690    restore_sensors()....
+          Restored c_science_printout from 0 to 0
+Successfully sent 1 file(s)
+
+
+GliderDos N -1 >Glider-Science software version match: 7.210000
+Science hardware version is 2.000000
+  1695 67 SCI:PROGLET house_elf begin() called
+  1695    SCI:   house_elf: Version 1.2
+  1695    SCI:PROGLET ctd41cp begin() called
+  1696    SCI:   ctd41cp: Version 0.2
+  1696    SCI:     ctd41cp:  Will be sending the following data to glider:
+  1696    SCI:           sci_water_cond(s/m)
+  1696    SCI:           sci_water_temp(degc)
+  1696    SCI:           sci_water_pressure(bar)
+  1696    SCI:           sci_ctd41cp_timestamp(timestamp)
+  1696    SCI:PROGLET oxy4 begin() called
+  1696    SCI:   oxy4: Version 0.0
+  1696    SCI:     oxy4:  Will be sending following data to glider:
+  1696    SCI:           sci_oxy4_oxygen(um)
+  1697    SCI:           sci_oxy4_saturation(%)
+  1697    SCI:           sci_oxy4_temp(degc)
+  1697    SCI:           sci_oxy4_calphase(deg)
+  1697    SCI:           sci_oxy4_tcphase(deg)
+  1697    SCI:           sci_oxy4_c1rph(deg)
+  1697    SCI:           sci_oxy4_c2rph(deg)
+  1697    SCI:           sci_oxy4_c1amp(mv)
+  1697    SCI:           sci_oxy4_c2amp(mv)
+  1697    SCI:           sci_oxy4_rawtemp(mv)
+  1697    SCI:           sci_oxy4_timestamp(timestamp)
+  1697    SCI:  Opening Bit(2) for output
+  1697    SCI:Bit(2) use count is now 1.
+  1698    SCI:Bit(2) raise count is now 0.
+  1698    SCI:Bit(2) raise count is now 0.
+  1698    SCI:PROGLET bb2flsV8 begin() called
+  1698    SCI:   bb2flsV8: Version 0.1
+  1698    SCI:     bb2flsV8:  Will be sending following data to glider:
+  1698    SCI:           sci_bb2flsv8_b470_scaled(nodim)
+  1698    SCI:           sci_bb2flsv8_b700_scaled(nodim)
+  1698    SCI:           sci_bb2flsv8_chl_scaled(ug/l)
+  1698    SCI:           sci_bb2flsv8_b470_sig(nodim)
+  1698    SCI:           sci_bb2flsv8_b700_sig(nodim)
+  1698    SCI:           sci_bb2flsv8_chl_sig(nodim)
+  1699    SCI:           sci_bb2flsv8_b470_ref(nodim)
+  1699 68 SCI:           sci_bb2flsv8_b700_ref(nodim)
+  1699    SCI:           sci_bb2flsv8_chl_ref(nodim)
+  1699    SCI:           sci_bb2flsv8_therm(nodim)
+  1700    SCI:           sci_bb2flsv8_timestamp(timestamp)
+  1700    SCI:  Opening Bit(0) for output
+  1700    SCI:Bit(0) use count is now 1.
+  1700    SCI:Bit(0) raise count is now 0.
+  1700    SCI:Bit(0) raise count is now 0.
+  1702    SCI:PROGLET house_elf start() called
+  1702    SCI:       house_elf_run(): 0 error(s) in a row. (5 is fatal)
+  1703    SCI:       house_elf_run(): 0 error(s) since house_elf_begin(). (50 is fatal)
+dir
+
+
+ Volume in drive C is UNIT 461 MB
+ Volume Serial Number is CA96-221A
+ Directory of C:\MISSIONS\
+
+.              <DIR>         08-30-18  8:21a
+..             <DIR>         08-30-18  8:21a
+AB_INIT.MI              498  05-23-14  2:10p
+BATHTUB.MI            5,580  05-23-14  2:10p
+BT1.MI                5,177  05-28-14  8:00p
+BT2.MI                4,864  05-28-14  8:00p
+CALM_DAY.MI             729  05-23-14  2:10p
+CNSTDPTH.MI           2,296  05-28-14  6:09p
+FREDSIM.MI            3,754  11-12-15  1:42p
+HOLD.MI               8,359  05-23-14  2:10p
+HOME.MI               5,445  11-12-15  1:42p
+IDLE.MI               1,221  05-28-14  6:09p
+INFLOOP.MI            2,611  05-28-14  6:09p
+INI0.MI               6,731  05-23-14  2:10p
+INI1.MI               6,416  11-12-15  1:42p
+INI2.MI               6,309  11-12-15  1:42p
+INI3.MI               7,190  11-12-15  1:42p
+INITIAL.MI            8,359  05-23-14  2:10p
+LASTGASP.MI           8,359  05-23-14  2:10p
+LOADSIM.MI            3,983  11-28-17 11:21a
+LOWBATT.MI            2,404  05-28-14  6:09p
+OOBABORT.MI           2,076  05-28-14  6:09p
+OVERTIME.MI           1,922  05-28-14  6:09p
+OVRDEPTH.MI           1,929  05-28-14  6:09p
+PAUSEHLD.MI           6,932  05-23-14  2:10p
+ROBBENIS.MI           5,449  11-17-15 11:20a
+SCI_OFF.MI              365  05-23-14  2:10p
+SCI_ON.MI               362  05-23-14  2:10p
+SEATRIAL.MI           5,449  11-12-15  1:42p
+SETPITCH.MI             414  05-23-14  2:10p
+SETSHAL.MI              336  05-23-14  2:10p
+STATUS.MI             2,003  05-23-14  2:10p
+STOCK.MI              5,489  05-23-14  2:10p
+STOCKSA.MI            5,490  04-09-15  8:57a
+STORM.MI              6,151  01-14-18  4:14a
+WATERCLR.MI             335  05-23-14  2:10p
+GINA_TRI.MI           6,173  09-05-18 11:02a
+1000M.MI              6,108  09-12-18  5:05p
+500M.MI               6,127  09-12-18  5:06p
+100M.MI               6,127  09-12-18  5:08p
+
+        38 file(s)         159,522 bytes
+         2 dir(s)    2,077,491,200 bytes free
+
+GliderDos N -1 >cd ..
+
+
+
+GliderDos N -1 >cd mafiles
+
+\MAFILES
+
+GliderDos N -1 >
+  1746 81 NOTE:GPS fix is getting stale: 1519 secs old
+
+GliderDos N -1 >dir
+
+
+ Volume in drive C is UNIT 461 MB
+ Volume Serial Number is CA96-221A
+ Directory of C:\MAFILES\
+
+.              <DIR>         08-30-18  8:21a
+..             <DIR>         08-30-18  8:21a
+DRIFT_10.MA           6,438  05-23-14  2:10p
+DRIFT_20.MA           5,459  05-28-14  8:00p
+DRIFT_21.MA           5,458  05-28-14  8:00p
+GOTO_L10.MA             301  09-12-18  4:59p
+GOTO_L70.MA             513  11-17-15 11:17a
+HOME.MA                 384  11-12-15  1:41p
+SAMPLE10.MA           6,565  05-23-14  2:10p
+SAMPLE11.MA           1,035  05-23-14  2:10p
+SAMPLE12.MA           6,566  05-23-14  2:10p
+SAMPLE30.MA           9,476  12-21-17 10:15a
+SAMPLE31.MA           9,621  01-22-18 12:23p
+SAMPLE32.MA           9,486  09-06-18 12:15p
+SAMPLE33.MA           9,497  09-04-18  2:04p
+SEATRIAL.MA             455  11-12-15  1:41p
+SURFAC01.MA           1,460  12-25-17  8:40a
+SURFAC02.MA           1,044  12-25-17  8:39a
+SURFAC03.MA           1,194  12-25-17  8:40a
+SURFAC04.MA           1,071  12-25-17  8:39a
+SURFAC05.MA             923  12-25-17  8:40a
+SURFAC06.MA           1,125  12-25-17  8:40a
+YO10.MA               1,520  09-12-18  5:03p
+YO10.MA~              1,357  04-08-15 10:55a
+YO14.MA               2,991  05-23-14  2:10p
+YO70.MA               1,524  09-12-18  5:00p
+YO75.MA               1,489  09-12-18  5:01p
+YO80.MA               1,492  09-12-18  5:02p
+
+        26 file(s)          88,444 bytes
+         2 dir(s)    2,077,491,200 bytes free
+
+GliderDos N -1 >exit
+
+
+This command is NOT safe to execute right now!
+Glider: socco_461.
+   You are requesting to return to the native operating system
+   and it does NOT have iridium support.  You might never talk
+   to me again :(
+
+Do you still wish to continue with this potentially dangerous exit? (Y or N) y
+
+
+Preparing to exit GliderDos
+WAITING for all motors to be idle --and--
+            science power to be stable
+
+Motors are idle
+Writing longterm state disk file: c:/state/longterm.sta
+   f_ocean_pressure_min(volts) 0.088324
+   m_avg_climb_rate(m/s) -0.188153
+   m_avg_speed(m/s) 0.087039
+   m_avg_upward_inflection_time(sec) 125.640472
+   m_battery(volts) 14.610562
+   m_coulomb_amphr_total(amp-hrs) 8.734063
+   m_iridium_call_num(nodim) 846.000000
+   m_iridium_dialed_num(nodim) 2537.000000
+   m_lat(lat) -2940.212600
+   m_lon(lon) 3115.097000
+   m_tot_ballast_pumped_energy(kjoules) 0.000000
+   m_tot_horz_dist(km) 570.266700
+   m_tot_num_inflections(nodim) 1238.000000
+   m_tot_num_ther

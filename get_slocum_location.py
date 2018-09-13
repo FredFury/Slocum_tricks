@@ -33,6 +33,7 @@ def convertISO2DecimalDegrees(coord):
 
 def retrieve(address,output):
     print ("Retrieving files...")
+    print(address)
     try:
         urllib.request.urlretrieve(address, output)
         urllib.request.urlcleanup()
@@ -175,12 +176,13 @@ def main():
     lineList = list_file_reader.readlines()
     last_file = lineList[-1].split(' ')[-1:][0].rstrip()
     print(last_file)
-    output = "slocum.dat"
-    #address = 'ftp://%s:%s@%s%s%s' % (usr,psswrd,host,path,last_file)
+    output = "slocum.log"
+    address = 'ftp://%s:%s@%s%s%s' % (username,password,host,path,last_file)
+    retrieve(address,output)
     #print address, output
 
     findData(output,last_file) ## scrape a log and append the data to a CSV
-    #update()
+    update()
     ##checkifrecent()
 
     #retroactive_local() ## build csv from a local dir
