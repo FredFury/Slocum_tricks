@@ -156,7 +156,7 @@ def main():
     print ("Starting up...")
     #let's build the ftp address here:
     auth_file = "/root/sg_auth"
-    f = open("demofile.txt", "r")
+    f = open(auth_file, "r")
     username = f.readline()
     password = f.readline()
 
