@@ -14,6 +14,7 @@ import os
 def update():
     print ("updating slocum.geojson to git...")
     os.system("git commit -m 'updated location' slocum.geojson")
+    os.system("git commit -m 'update slocum surface data' surface.dat")
     os.system("git commit -m 'update slocum csv' slocum.csv")
     os.system("git push origin master")
 
@@ -162,11 +163,18 @@ def main():
     username = f.readline()
     password = f.readline()
 
+    #retrieve surface data
+    host = "dockserver.socco.org.za"
+    path = "/gliders/socco_461/surface.dat"
+    address = 'ftp://%s:%s@%s%s' % (username,password,host,path)
+    retrieve(address,"surface.dat");
+
     host = "dockserver.socco.org.za"
     path = "/gliders/socco_461/logs/"
     list_file = "list"
     address = 'ftp://%s:%s@%s%s' % (username,password,host,path)
     #print "Getting file listing from: " + address + list_file
+
 
     # Retrieve a list of files
     retrieve(address,list_file) ##
