@@ -155,7 +155,7 @@ def lookfor():
 def main():
     print ("Starting up...")
     #let's build the ftp address here:
-    auth_file = "/root/sg_auth"
+    auth_file = "/root/slocum_auth"
     f = open(auth_file, "r")
     username = f.readline()
     password = f.readline()
