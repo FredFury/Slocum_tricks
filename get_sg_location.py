@@ -5,14 +5,28 @@ import paramiko
 import datetime
 import numpy
 import simplejson
+import codecs
 import json
 from netCDF4 import Dataset
 
 
+class MyEncoder(json.JSONEncoder):
+    def default(self, obj):
+        if isinstance(obj, numpy.integer):
+            return int(obj)
+        elif isinstance(obj, numpy.floating):
+            return float(obj)
+        elif isinstance(obj, numpy.ndarray):
+            return obj.tolist()
+        else:
+            return super(MyEncoder, self).default(obj)
+
 #send file to FTP server
 def update(sg):
     print("updating git...")
-    cmd  = "git commit -m 'updated location'" + sg +".json"
+    print("Syncing "+sg+".json")
+    cmd  = "git commit -m 'updated location' " + sg +".json"
+    print(cmd)
     os.system(cmd)
     os.system("git push")
 
@@ -37,12 +51,15 @@ def retrieveFile(sg):
     host = "seaglider.socco.org.za"
     port = 22
     transport = paramiko.Transport((host, port))
-    password = "soccopilot"
-    username = "pilot"
+    auth_file = "/root/sg_auth"
+    f = open(auth_file, "r")
+    username = f.readline().strip("\n")
+    password = f.readline().strip("\n")
+    f.close()
     transport.connect(username = username, password = password)
     sftp = paramiko.SFTPClient.from_transport(transport)
 
-    path = '/home/sg573/GINA2018/SEATRIALS/'
+    path = '/home/sg573/'
     fileList = sftp.listdir(path)
     for filename in fileList:
         if filename.endswith('.nc') and filename.startswith('p'):
@@ -123,11 +140,17 @@ def read_NC(nc_f,sg):
     data.append(dataDict)
     print (data)
     outputfile = "/root/gliders/"+sg + ".json"
+    #dumped = json.dumps(dataDi)
+    with open(outputfile, 'w') as f:
+    	json.dump(data,f, cls=MyEncoder)
+
+    #with open(outputfile, 'w') as outfile:
+    #        simplejson.dump(data, outfile, ignore_nan=True)
     #with open(outputfile, 'w') as file:
     #    file.write(simplejson.dumps(data))
-    with open(outputfile, 'w') as f:
-        for item in data:
-            f.write("%s\n" % item)
+    #with open(outputfile, 'w') as f:
+    #    for item in data:
+    #        f.write("%s\n" % item)
 
 def main():
     arg = sys.argv[1]
