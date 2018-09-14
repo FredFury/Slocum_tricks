@@ -59,15 +59,19 @@ def retrieveFile(sg):
     transport.connect(username = username, password = password)
     sftp = paramiko.SFTPClient.from_transport(transport)
 
-    path = '/home/sg573/'
+    path = '/home/'+sg+'/'
     fileList = sftp.listdir(path)
+    #print(fileList) 
+    files = []
     for filename in fileList:
         if filename.endswith('.nc') and filename.startswith('p'):
-            print(filename)
-            targetFile = filename
-            break;
+            files.append(filename)
+            #targetFile = filename
+            #break;
+    files.sort()
+    targetFile = files[-1]
     outputFile = sg+"data.nc"
-    sftp.get(path+filename,outputFile)
+    sftp.get(path+targetFile,outputFile)
     sftp.close()
     transport.close()
 
