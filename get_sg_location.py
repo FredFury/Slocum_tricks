@@ -29,6 +29,7 @@ def update(sg):
     cmd2  = "git commit -m 'updated location csv' " + sg +".csv"
     print(cmd)
     os.system(cmd)
+    print(cmd2)
     os.system(cmd2)
     os.system("git push")
 
