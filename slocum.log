@@ -1,316 +1,477 @@
-Connection Event: Carrier Detect found.  1493    Iridium console active and ready...
+Connection Event: Carrier Detect found. 93932    Iridium console active and ready...
 Vehicle Name: socco_461
-Curr Time: Thu Sep 13 07:21:38 2018 MT:    1493
-DR  Location: -2940.213 N  3115.097 E measured    1263.01 secs ago
-GPS TooFar:   -2937.061 N  3118.287 E measured     49.473 secs ago
-GPS Invalid : -2940.325 N  3114.989 E measured    1071.46 secs ago
-GPS Location: -2940.213 N  3115.097 E measured    1267.03 secs ago
-   sensor:c_wpt_lat(lat)=-2946.31210002481         1e+308 secs ago
-   sensor:c_wpt_lon(lon)=3109.49189999401          1e+308 secs ago
-   sensor:m_battery(volts)=14.6557517356503         4.208 secs ago
-   sensor:m_coulomb_amphr(amp-hrs)=0.410874992609024      4.387 secs ago
-   sensor:m_coulomb_amphr_total(amp-hrs)=8.68893799268539      4.402 secs ago
-   sensor:m_final_water_vx(m/s)=0                  1e+308 secs ago
-   sensor:m_final_water_vy(m/s)=0                  1e+308 secs ago
-   sensor:m_iridium_signal_strength(nodim)=5       16.746 secs ago
-   sensor:m_leakdetect_voltage(volts)=2.49847374847375      8.416 secs ago
-   sensor:m_leakdetect_voltage_forward(volts)=2.5      8.426 secs ago
-   sensor:m_lithium_battery_relative_charge(%)=94.3209555603363      4.618 secs ago
-   sensor:m_tot_num_inflections(nodim)=1238        1e+308 secs ago
-   sensor:m_vacuum(inHg)=8.74154285714286           4.597 secs ago
-   sensor:m_water_vx(m/s)=0                        1e+308 secs ago
-   sensor:m_water_vy(m/s)=0                        1e+308 secs ago
+Curr Time: Sat Sep 15 09:59:09 2018 MT:   93931
+DR  Location: -2758.127 N  3241.953 E measured     45.992 secs ago
+GPS TooFar:   -2754.146 N  3240.930 E measured    41495.6 secs ago
+GPS Invalid : -2757.587 N  3241.842 E measured    146.376 secs ago
+GPS Location: -2758.127 N  3241.953 E measured     46.315 secs ago
+   sensor:c_wpt_lat(lat)=-2747                    93767.2 secs ago
+   sensor:c_wpt_lon(lon)=3248                     93767.3 secs ago
+   sensor:m_battery(volts)=14.1004527849247        28.717 secs ago
+   sensor:m_coulomb_amphr(amp-hrs)=9.84200000762939      5.154 secs ago
+   sensor:m_coulomb_amphr_total(amp-hrs)=18.5677515133514      5.175 secs ago
+   sensor:m_final_water_vx(m/s)=-0.214563081412755    6020.74 secs ago
+   sensor:m_final_water_vy(m/s)=-0.431994217446449    6020.78 secs ago
+   sensor:m_iridium_signal_strength(nodim)=5       10.254 secs ago
+   sensor:m_leakdetect_voltage(volts)=2.49392551892552     43.195 secs ago
+   sensor:m_leakdetect_voltage_forward(volts)=2.49722222222222     43.217 secs ago
+   sensor:m_lithium_battery_relative_charge(%)=87.8642146971559      5.435 secs ago
+   sensor:m_tot_num_inflections(nodim)=1286       232.874 secs ago
+   sensor:m_vacuum(inHg)=8.63548571428571          29.186 secs ago
+   sensor:m_water_vx(m/s)=-0.244929975790461      112.712 secs ago
+   sensor:m_water_vy(m/s)=-0.449989590418666      112.754 secs ago
    sensor:u_use_current_correction(nodim)=1        1e+308 secs ago
    sensor:x_last_wpt_lat(lat)=-2952.6059           1e+308 secs ago
    sensor:x_last_wpt_lon(lon)=3102.6087            1e+308 secs ago
-ABORT HISTORY: total since reset: 2
-ABORT HISTORY: last abort cause: MS_ABORT_SAMEDEPTH_FOR
+ABORT HISTORY: total since reset: 5
+ABORT HISTORY: last abort cause: MS_ABORT_USER_INTERRUPT
 ABORT HISTORY: last abort details: 
-ABORT HISTORY: last abort time: 2018-09-13T06:42:10
-ABORT HISTORY: last abort segment: socco_461-2018-255-1-0 (0322.0000)
-ABORT HISTORY: last abort mission: lastgasp.mi
-  1494    No login script found for processing.
+ABORT HISTORY: last abort time: 2018-09-14T05:37:24
+ABORT HISTORY: last abort segment: socco_461-2018-256-10-0 (0334.0000)
+ABORT HISTORY: last abort mission: GINA_TRIALS.MI
+ 93933    No login script found for processing.
 
 
-GliderDos N -1 >cd missionfiles
-
-error code -1
-GliderDos N -1 >dir
 
 
- Volume in drive C is UNIT 461 MB
- Volume Serial Number is CA96-221A
- Directory of C:\
+Glider socco_461 at surface.
+Because:timeout expired [behavior surface_7 start_when = 9.0]
+MissionName:100M.MI MissionNum:socco_461-2018-256-12-50 (0336.0050)
+Vehicle Name: socco_461
+Curr Time: Sat Sep 15 09:59:27 2018 MT:   93950
+DR  Location: -2758.127 N  3241.953 E measured     64.409 secs ago
+GPS TooFar:   -2754.146 N  3240.930 E measured      41514 secs ago
+GPS Invalid : -2757.587 N  3241.842 E measured    164.793 secs ago
+GPS Location: -2758.127 N  3241.953 E measured     64.731 secs ago
+   sensor:c_wpt_lat(lat)=-2747                    93785.6 secs ago
+   sensor:c_wpt_lon(lon)=3248                     93785.6 secs ago
+   sensor:m_battery(volts)=14.1004527849247        47.052 secs ago
+   sensor:m_coulomb_amphr(amp-hrs)=9.84437561035156      4.327 secs ago
+   sensor:m_coulomb_amphr_total(amp-hrs)=18.5701271160736       4.34 secs ago
+   sensor:m_final_water_vx(m/s)=-0.214563081412755    6039.05 secs ago
+   sensor:m_final_water_vy(m/s)=-0.431994217446449    6039.08 secs ago
+   sensor:m_iridium_signal_strength(nodim)=5       28.551 secs ago
+   sensor:m_leakdetect_voltage(volts)=2.49392551892552     61.485 secs ago
+   sensor:m_leakdetect_voltage_forward(volts)=2.49722222222222     61.497 secs ago
+   sensor:m_lithium_battery_relative_charge(%)=87.8626620156382      4.551 secs ago
+   sensor:m_tot_num_inflections(nodim)=1286       251.134 secs ago
+   sensor:m_vacuum(inHg)=8.63548571428571          47.431 secs ago
+   sensor:m_water_vx(m/s)=-0.244929975790461      130.946 secs ago
+   sensor:m_water_vy(m/s)=-0.449989590418666      130.978 secs ago
+   sensor:u_use_current_correction(nodim)=1        1e+308 secs ago
+   sensor:x_last_wpt_lat(lat)=-2952.6059           1e+308 secs ago
+   sensor:x_last_wpt_lon(lon)=3102.6087            1e+308 secs ago
+devices:(t/m/s) errs:   1/   0/   0 warn:  17/  11/   0 odd:  42/  37/   1
+ABORT HISTORY: total since reset: 5
+ABORT HISTORY: last abort cause: MS_ABORT_USER_INTERRUPT
+ABORT HISTORY: last abort details: 
+ABORT HISTORY: last abort time: 2018-09-14T05:37:24
+ABORT HISTORY: last abort segment: socco_461-2018-256-10-0 (0334.0000)
+ABORT HISTORY: last abort mission: GINA_TRIALS.MI
 
-APP            <DIR>         08-30-18  8:00a
-BIN            <DIR>         08-30-18  8:00a
-CONFIG         <DIR>         08-30-18  8:00a
-LOGS           <DIR>         08-30-18  8:03a
-MAFILES        <DIR>         08-30-18  8:03a
-MISSIONS       <DIR>         08-30-18  8:03a
-SENTLOGS       <DIR>         08-30-18  8:04a
-STATE          <DIR>         08-30-18  8:00a
+   Hit Control-R to RESUME the mission, i.e. dive!
+   Hit Control-C to END    the mission, i.e. GliderDos
+   Hit Control-E to extend surface time by 5 minutes.
+   Hit Control-W to get device warning reports.
+   Hit Control-F to re-read yo, goto_l, surface, sample, drift_ mafiles.
+   Hit H <n> <0:1> to Hangup and call back in <n> minutes at 0-primary 1-alternate number.
+   Hit S [-f={rf}|{irid] [-num=<n>] [-t=<s>] [filespec ...] to send log files
+   Hit ! <GliderDos cmd>  to execute <GliderDos cmd>
+   Hit Control-T to consci to science computer when comms ready:
+                                               ... communications ready for consci.
 
-         0 file(s)               0 bytes
-         8 dir(s)    2,077,491,200 bytes free
+Water Velocity Calculations waiting for final gps fix(ideally -13 secs)
+Waypoint: (-2747.0000,3248.0000) Range: 22813m, Bearing: 48deg, Age: 26:3h:m
+Time until diving is: 232 secs
+s *.sbd *.tbd
 
-GliderDos N -1 >cd missions
-
-\MISSIONS
-
-GliderDos N -1 >dir
-
-
- Volume in drive C is UNIT 461 MB
- Volume Serial Number is CA96-221A
- Directory of C:\MISSIONS\
-
-.              <DIR>         08-30-18  8:21a
-..             <DIR>         08-30-18  8:21a
-AB_INIT.MI              498  05-23-14  2:10p
-BATHTUB.MI            5,580  05-23-14  2:10p
-BT1.MI                5,177  05-28-14  8:00p
-BT2.MI                4,864  05-28-14  8:00p
-CALM_DAY.MI             729  05-23-14  2:10p
-CNSTDPTH.MI           2,296  05-28-14  6:09p
-FREDSIM.MI            3,754  11-12-15  1:42p
-HOLD.MI               8,359  05-23-14  2:10p
-HOME.MI               5,445  11-12-15  1:42p
-IDLE.MI               1,221  05-28-14  6:09p
-INFLOOP.MI            2,611  05-28-14  6:09p
-INI0.MI               6,731  05-23-14  2:10p
-INI1.MI               6,416  11-12-15  1:42p
-INI2.MI               6,309  11-12-15  1:42p
-INI3.MI               7,190  11-12-15  1:42p
-INITIAL.MI            8,359  05-23-14  2:10p
-LASTGASP.MI           8,359  05-23-14  2:10p
-LOADSIM.MI            3,983  11-28-17 11:21a
-LOWBATT.MI            2,404  05-28-14  6:09p
-OOBABORT.MI           2,076  05-28-14  6:09p
-OVERTIME.MI           1,922  05-28-14  6:09p
-OVRDEPTH.MI           1,929  05-28-14  6:09p
-PAUSEHLD.MI           6,932  05-23-14  2:10p
-ROBBENIS.MI           5,449  11-17-15 11:20a
-SCI_OFF.MI              365  05-23-14  2:10p
-SCI_ON.MI               362  05-23-14  2:10p
-SEATRIAL.MI           5,449  11-12-15  1:42p
-SETPITCH.MI             414  05-23-14  2:10p
-SETSHAL.MI              336  05-23-14  2:10p
-STATUS.MI             2,003  05-23-14  2:10p
-STOCK.MI              5,489  05-23-14  2:10p
-STOCKSA.MI            5,490  04-09-15  8:57a
-STORM.MI              6,151  01-14-18  4:14a
-WATERCLR.MI             335  05-23-14  2:10p
-GINA_TRI.MI           6,173  09-05-18 11:02a
-1000M.MI              6,108  09-12-18  5:05p
-500M.MI               6,127  09-12-18  5:06p
-100M.MI               6,127  09-12-18  5:08p
-
-        38 file(s)         159,522 bytes
-         2 dir(s)    2,077,491,200 bytes free
-
-GliderDos N -1 >zs lastgasp.mi
-Enumerating files; patience
-Checking for dupes; one dot for every 10 files
-.
-About to send 1 files
+--------------------------------
+ 93974 83 03360050.mlg LOG FILE CLOSED
+SCIENCE DATA LOGGING: science IS running
+CONSCI REQUESTED (using IRIDIUM as console)
+ASKING SCIENCE COMPUTER TO SWITCH TO COMMAND MODE via IRIDIUM
+SWITCHING TO SCIENCE COMMAND MODE over IRIDIUM
+Normal operation resumes when:
+    SciDos> QUIT              -or-
+    Lose CD (unplug freewave/hangup iridium) -or-
+    run longer than U_SCI_CMD_MAX_CONSCI_TIME(3600)s
+ 93984 86 Neutering the Freewave Console
+SCI: Implicitly limiting total transfer to 1800 secs, representing 180 KB total size
+SCI: Enumerating and selecting files
+SCI: About to send 2 files
 Prechecking is not necessary for this invocation
-  1624 64 save_and_change_sensors()....
+START
+**B00000000000000?
+SHUFFLING FILES..
+SCI: Sent 2 file(s):
+c:\logs\03360050.TBD  c:\logs\03360049.TBD
+SCI: SUCCESS
+ 94188 34 Freewave console restored
+REVERTING FROM SCIENCE COMMAND MODE
+SCIENCE COMMAND MODE TERMINATED because:
+   Science Program QUIT (cts lowered)
+GLD: Enumerating and selecting files
+GLD: About to send 2 files
+Prechecking is not necessary for this invocation
+ 94190    save_and_change_sensors()....
           Changed u_use_ctd_depth_for_flying from 0 to 0
           Changed c_science_on from 1 to 0
-  1624    save_and_change_sensors()....
+ 94190    save_and_change_sensors()....
           Changed c_science_printout from 0 to 0
 Waiting for motors idle
 START
-**B00000000000000? 1690    restore_sensors()....
+**B00000000000000?94285    restore_sensors()....
           Restored u_use_ctd_depth_for_flying from 0 to 0
           Restored c_science_on from 0 to 1
-  1690    restore_sensors()....
-  1690    restore_sensors()....
+ 94285    restore_sensors()....
+ 94285    restore_sensors()....
           Restored c_science_printout from 0 to 0
-Successfully sent 1 file(s)
 
-
-GliderDos N -1 >Glider-Science software version match: 7.210000
+SHUFFLING FILES..
+GLD: Sent 2 file(s):
+c:\logs\03360050.SBD  c:\logs\03360049.SBD
+GLD: SUCCESS
+Glider-Science software version match: 7.210000
 Science hardware version is 2.000000
-  1695 67 SCI:PROGLET house_elf begin() called
-  1695    SCI:   house_elf: Version 1.2
-  1695    SCI:PROGLET ctd41cp begin() called
-  1696    SCI:   ctd41cp: Version 0.2
-  1696    SCI:     ctd41cp:  Will be sending the following data to glider:
-  1696    SCI:           sci_water_cond(s/m)
-  1696    SCI:           sci_water_temp(degc)
-  1696    SCI:           sci_water_pressure(bar)
-  1696    SCI:           sci_ctd41cp_timestamp(timestamp)
-  1696    SCI:PROGLET oxy4 begin() called
-  1696    SCI:   oxy4: Version 0.0
-  1696    SCI:     oxy4:  Will be sending following data to glider:
-  1696    SCI:           sci_oxy4_oxygen(um)
-  1697    SCI:           sci_oxy4_saturation(%)
-  1697    SCI:           sci_oxy4_temp(degc)
-  1697    SCI:           sci_oxy4_calphase(deg)
-  1697    SCI:           sci_oxy4_tcphase(deg)
-  1697    SCI:           sci_oxy4_c1rph(deg)
-  1697    SCI:           sci_oxy4_c2rph(deg)
-  1697    SCI:           sci_oxy4_c1amp(mv)
-  1697    SCI:           sci_oxy4_c2amp(mv)
-  1697    SCI:           sci_oxy4_rawtemp(mv)
-  1697    SCI:           sci_oxy4_timestamp(timestamp)
-  1697    SCI:  Opening Bit(2) for output
-  1697    SCI:Bit(2) use count is now 1.
-  1698    SCI:Bit(2) raise count is now 0.
-  1698    SCI:Bit(2) raise count is now 0.
-  1698    SCI:PROGLET bb2flsV8 begin() called
-  1698    SCI:   bb2flsV8: Version 0.1
-  1698    SCI:     bb2flsV8:  Will be sending following data to glider:
-  1698    SCI:           sci_bb2flsv8_b470_scaled(nodim)
-  1698    SCI:           sci_bb2flsv8_b700_scaled(nodim)
-  1698    SCI:           sci_bb2flsv8_chl_scaled(ug/l)
-  1698    SCI:           sci_bb2flsv8_b470_sig(nodim)
-  1698    SCI:           sci_bb2flsv8_b700_sig(nodim)
-  1698    SCI:           sci_bb2flsv8_chl_sig(nodim)
-  1699    SCI:           sci_bb2flsv8_b470_ref(nodim)
-  1699 68 SCI:           sci_bb2flsv8_b700_ref(nodim)
-  1699    SCI:           sci_bb2flsv8_chl_ref(nodim)
-  1699    SCI:           sci_bb2flsv8_therm(nodim)
-  1700    SCI:           sci_bb2flsv8_timestamp(timestamp)
-  1700    SCI:  Opening Bit(0) for output
-  1700    SCI:Bit(0) use count is now 1.
-  1700    SCI:Bit(0) raise count is now 0.
-  1700    SCI:Bit(0) raise count is now 0.
-  1702    SCI:PROGLET house_elf start() called
-  1702    SCI:       house_elf_run(): 0 error(s) in a row. (5 is fatal)
-  1703    SCI:       house_elf_run(): 0 error(s) since house_elf_begin(). (50 is fatal)
-dir
+ 94293 36 SCI:PROGLET house_elf begin() called
+ 94293    SCI:   house_elf: Version 1.2
+ 94293    SCI:PROGLET ctd41cp begin() called
+ 94293    SCI:   ctd41cp: Version 0.2
+ 94293    SCI:     ctd41cp:  Will be sending the following data to glider:
+ 94293    SCI:           sci_water_cond(s/m)
+ 94293    SCI:           sci_water_temp(degc)
+ 94293    SCI:           sci_water_pressure(bar)
+ 94293    SCI:           sci_ctd41cp_timestamp(timestamp)
+ 94293    SCI:PROGLET oxy4 begin() called
+ 94293    SCI:   oxy4: Version 0.0
+ 94294    SCI:     oxy4:  Will be sending following data to glider:
+ 94294    SCI:           sci_oxy4_oxygen(um)
+ 94294    SCI:           sci_oxy4_saturation(%)
+ 94294    SCI:           sci_oxy4_temp(degc)
+ 94294    SCI:           sci_oxy4_calphase(deg)
+ 94294    SCI:           sci_oxy4_tcphase(deg)
+ 94294    SCI:           sci_oxy4_c1rph(deg)
+ 94294    SCI:           sci_oxy4_c2rph(deg)
+ 94294    SCI:           sci_oxy4_c1amp(mv)
+ 94294    SCI:           sci_oxy4_c2amp(mv)
+ 94294    SCI:           sci_oxy4_rawtemp(mv)
+ 94294    SCI:           sci_oxy4_timestamp(timestamp)
+ 94295    SCI:  Opening Bit(2) for output
+ 94295    SCI:Bit(2) use count is now 1.
+ 94295    SCI:Bit(2) raise count is now 0.
+ 94295    SCI:Bit(2) raise count is now 0.
+ 94295 37 SCI:PROGLET bb2flsV8 begin() called
+ 94295    SCI:   bb2flsV8: Version 0.1
+ 94295    SCI:     bb2flsV8:  Will be sending following data to glider:
+ 94296    SCI:           sci_bb2flsv8_b470_scaled(nodim)
+ 94296    SCI:           sci_bb2flsv8_b700_scaled(nodim)
+ 94296    SCI:           sci_bb2flsv8_chl_scaled(ug/l)
+ 94296    SCI:           sci_bb2flsv8_b470_sig(nodim)
+ 94296    SCI:           sci_bb2flsv8_b700_sig(nodim)
+ 94296    SCI:           sci_bb2flsv8_chl_sig(nodim)
+ 94297    SCI:           sci_bb2flsv8_b470_ref(nodim)
+ 94297    SCI:           sci_bb2flsv8_b700_ref(nodim)
+ 94297    SCI:           sci_bb2flsv8_chl_ref(nodim)
+ 94297    SCI:           sci_bb2flsv8_therm(nodim)
+ 94297    SCI:           sci_bb2flsv8_timestamp(timestamp)
+ 94297    SCI:  Opening Bit(0) for output
+ 94297    SCI:Bit(0) use count is now 1.
+ 94297    SCI:Bit(0) raise count is now 0.
+ 94297    SCI:Bit(0) raise count is now 0.
+ 94303 37 SCI:PROGLET house_elf start() called
+ 94303    SCI:       house_elf_run(): 0 error(s) in a row. (5 is fatal)
+ 94303    SCI:       house_elf_run(): 0 error(s) since house_elf_begin(). (50 is fatal)
+ 94361 40 03360051.mlg LOG FILE OPENED
 
-
- Volume in drive C is UNIT 461 MB
- Volume Serial Number is CA96-221A
- Directory of C:\MISSIONS\
-
-.              <DIR>         08-30-18  8:21a
-..             <DIR>         08-30-18  8:21a
-AB_INIT.MI              498  05-23-14  2:10p
-BATHTUB.MI            5,580  05-23-14  2:10p
-BT1.MI                5,177  05-28-14  8:00p
-BT2.MI                4,864  05-28-14  8:00p
-CALM_DAY.MI             729  05-23-14  2:10p
-CNSTDPTH.MI           2,296  05-28-14  6:09p
-FREDSIM.MI            3,754  11-12-15  1:42p
-HOLD.MI               8,359  05-23-14  2:10p
-HOME.MI               5,445  11-12-15  1:42p
-IDLE.MI               1,221  05-28-14  6:09p
-INFLOOP.MI            2,611  05-28-14  6:09p
-INI0.MI               6,731  05-23-14  2:10p
-INI1.MI               6,416  11-12-15  1:42p
-INI2.MI               6,309  11-12-15  1:42p
-INI3.MI               7,190  11-12-15  1:42p
-INITIAL.MI            8,359  05-23-14  2:10p
-LASTGASP.MI           8,359  05-23-14  2:10p
-LOADSIM.MI            3,983  11-28-17 11:21a
-LOWBATT.MI            2,404  05-28-14  6:09p
-OOBABORT.MI           2,076  05-28-14  6:09p
-OVERTIME.MI           1,922  05-28-14  6:09p
-OVRDEPTH.MI           1,929  05-28-14  6:09p
-PAUSEHLD.MI           6,932  05-23-14  2:10p
-ROBBENIS.MI           5,449  11-17-15 11:20a
-SCI_OFF.MI              365  05-23-14  2:10p
-SCI_ON.MI               362  05-23-14  2:10p
-SEATRIAL.MI           5,449  11-12-15  1:42p
-SETPITCH.MI             414  05-23-14  2:10p
-SETSHAL.MI              336  05-23-14  2:10p
-STATUS.MI             2,003  05-23-14  2:10p
-STOCK.MI              5,489  05-23-14  2:10p
-STOCKSA.MI            5,490  04-09-15  8:57a
-STORM.MI              6,151  01-14-18  4:14a
-WATERCLR.MI             335  05-23-14  2:10p
-GINA_TRI.MI           6,173  09-05-18 11:02a
-1000M.MI              6,108  09-12-18  5:05p
-500M.MI               6,127  09-12-18  5:06p
-100M.MI               6,127  09-12-18  5:08p
-
-        38 file(s)         159,522 bytes
-         2 dir(s)    2,077,491,200 bytes free
-
-GliderDos N -1 >cd ..
+--------------------------------
+ 94361    behavior surface_7: SUBSTATE 7 ->7 : After data transmission, waiting for control-C to exit/resume
 
 
 
-GliderDos N -1 >cd mafiles
 
-\MAFILES
+Glider socco_461 at surface.
+Because:timeout expired [behavior surface_7 start_when = 9.0]
+MissionName:100M.MI MissionNum:socco_461-2018-256-12-51 (0336.0051)
+Vehicle Name: socco_461
+Curr Time: Sat Sep 15 10:06:23 2018 MT:   94366
+DR  Location: -2758.127 N  3241.953 E measured    479.822 secs ago
+GPS TooFar:   -2754.146 N  3240.930 E measured    41929.5 secs ago
+GPS Invalid : -2757.587 N  3241.842 E measured    580.206 secs ago
+GPS Location: -2758.127 N  3241.953 E measured    480.144 secs ago
+   sensor:c_wpt_lat(lat)=-2747                      94201 secs ago
+   sensor:c_wpt_lon(lon)=3248                       94201 secs ago
+   sensor:m_battery(volts)=14.079890809513          2.857 secs ago
+   sensor:m_coulomb_amphr(amp-hrs)=9.89781188964844      3.034 secs ago
+   sensor:m_coulomb_amphr_total(amp-hrs)=18.6235633953705      3.047 secs ago
+   sensor:m_final_water_vx(m/s)=-0.214563081412755    6454.47 secs ago
+   sensor:m_final_water_vy(m/s)=-0.431994217446449     6454.5 secs ago
+   sensor:m_iridium_signal_strength(nodim)=5      443.968 secs ago
+   sensor:m_leakdetect_voltage(volts)=2.49819902319902      2.902 secs ago
+   sensor:m_leakdetect_voltage_forward(volts)=2.5      2.911 secs ago
+   sensor:m_lithium_battery_relative_charge(%)=87.8277363428951      3.253 secs ago
+   sensor:m_tot_num_inflections(nodim)=1286       666.546 secs ago
+   sensor:m_vacuum(inHg)=9.21175714285714           3.231 secs ago
+   sensor:m_water_vx(m/s)=-0.244929975790461       546.36 secs ago
+   sensor:m_water_vy(m/s)=-0.449989590418666      546.391 secs ago
+   sensor:u_use_current_correction(nodim)=1        1e+308 secs ago
+   sensor:x_last_wpt_lat(lat)=-2952.6059           1e+308 secs ago
+   sensor:x_last_wpt_lon(lon)=3102.6087            1e+308 secs ago
+devices:(t/m/s) errs:   1/   0/   0 warn:  17/  11/   0 odd:  42/  37/   1
+ABORT HISTORY: total since reset: 5
+ABORT HISTORY: last abort cause: MS_ABORT_USER_INTERRUPT
+ABORT HISTORY: last abort details: 
+ABORT HISTORY: last abort time: 2018-09-14T05:37:24
+ABORT HISTORY: last abort segment: socco_461-2018-256-10-0 (0334.0000)
+ABORT HISTORY: last abort mission: GINA_TRIALS.MI
 
-GliderDos N -1 >
-  1746 81 NOTE:GPS fix is getting stale: 1519 secs old
+   Hit Control-R to RESUME the mission, i.e. dive!
+   Hit Control-C to END    the mission, i.e. GliderDos
+   Hit Control-E to extend surface time by 5 minutes.
+   Hit Control-W to get device warning reports.
+   Hit Control-F to re-read yo, goto_l, surface, sample, drift_ mafiles.
+   Hit H <n> <0:1> to Hangup and call back in <n> minutes at 0-primary 1-alternate number.
+   Hit S [-f={rf}|{irid] [-num=<n>] [-t=<s>] [filespec ...] to send log files
+   Hit ! <GliderDos cmd>  to execute <GliderDos cmd>
+   Hit Control-T to consci to science computer when comms ready:
+                                               ... communications ready for consci.
 
-GliderDos N -1 >dir
+Water Velocity Calculations waiting for final gps fix(ideally -428 secs)
+Waypoint: (-2747.0000,3248.0000) Range: 22813m, Bearing: 48deg, Age: 26:10h:m
+Time until diving is: 294 secs
+!zr
 
+--------------------------------
+ 94385 44 save_and_change_sensors()....
+          Changed u_use_ctd_depth_for_flying from 0 to 0
+          Changed c_science_on from 1 to 0
+ 94385    save_and_change_sensors()....
+          Changed c_science_printout from 0 to 0
+Waiting for motors idle
+START
+**B01000800275775? 94408    restore_sensors()....
+          Restored u_use_ctd_depth_for_flying from 0 to 0
+          Restored c_science_on from 0 to 1
+ 94408    restore_sensors()....
+ 94408    restore_sensors()....
+          Restored c_science_printout from 0 to 0
 
- Volume in drive C is UNIT 461 MB
- Volume Serial Number is CA96-221A
- Directory of C:\MAFILES\
+Done!
 
-.              <DIR>         08-30-18  8:21a
-..             <DIR>         08-30-18  8:21a
-DRIFT_10.MA           6,438  05-23-14  2:10p
-DRIFT_20.MA           5,459  05-28-14  8:00p
-DRIFT_21.MA           5,458  05-28-14  8:00p
-GOTO_L10.MA             301  09-12-18  4:59p
-GOTO_L70.MA             513  11-17-15 11:17a
-HOME.MA                 384  11-12-15  1:41p
-SAMPLE10.MA           6,565  05-23-14  2:10p
-SAMPLE11.MA           1,035  05-23-14  2:10p
-SAMPLE12.MA           6,566  05-23-14  2:10p
-SAMPLE30.MA           9,476  12-21-17 10:15a
-SAMPLE31.MA           9,621  01-22-18 12:23p
-SAMPLE32.MA           9,486  09-06-18 12:15p
-SAMPLE33.MA           9,497  09-04-18  2:04p
-SEATRIAL.MA             455  11-12-15  1:41p
-SURFAC01.MA           1,460  12-25-17  8:40a
-SURFAC02.MA           1,044  12-25-17  8:39a
-SURFAC03.MA           1,194  12-25-17  8:40a
-SURFAC04.MA           1,071  12-25-17  8:39a
-SURFAC05.MA             923  12-25-17  8:40a
-SURFAC06.MA           1,125  12-25-17  8:40a
-YO10.MA               1,520  09-12-18  5:03p
-YO10.MA~              1,357  04-08-15 10:55a
-YO14.MA               2,991  05-23-14  2:10p
-YO70.MA               1,524  09-12-18  5:00p
-YO75.MA               1,489  09-12-18  5:01p
-YO80.MA               1,492  09-12-18  5:02p
+--------------------------------
+ 94408    behavior surface_7: ! succeeded:zr
 
-        26 file(s)          88,444 bytes
-         2 dir(s)    2,077,491,200 bytes free
-
-GliderDos N -1 >exit
-
-
-This command is NOT safe to execute right now!
-Glider: socco_461.
-   You are requesting to return to the native operating system
-   and it does NOT have iridium support.  You might never talk
-   to me again :(
-
-Do you still wish to continue with this potentially dangerous exit? (Y or N) y
+ 94408    behavior surface_7: SUBSTATE 7 ->7 : After ! command, waiting for control-C to exit/resume
+Glider-Science software version match: 7.210000
+Science hardware version is 2.000000
+ 94423 47 SCI:PROGLET house_elf begin() called
+ 94423    SCI:   house_elf: Version 1.2
+ 94424    SCI:PROGLET ctd41cp begin() called
+ 94424    SCI:   ctd41cp: Version 0.2
+ 94425    SCI:     ctd41cp:  Will be sending the following data to glider:
+ 94425    SCI:           sci_water_cond(s/m)
+ 94425    SCI:           sci_water_temp(degc)
+ 94425    SCI:           sci_water_pressure(bar)
+ 94425    SCI:           sci_ctd41cp_timestamp(timestamp)
+ 94426    SCI:PROGLET oxy4 begin() called
+ 94426    SCI:   oxy4: Version 0.0
 
 
-Preparing to exit GliderDos
-WAITING for all motors to be idle --and--
-            science power to be stable
 
-Motors are idle
+
+Glider socco_461 at surface.
+Because:timeout expired [behavior surface_7 start_when = 9.0]
+MissionName:100M.MI MissionNum:socco_461-2018-256-12-51 (0336.0051)
+Vehicle Name: socco_461
+Curr Time: Sat Sep 15 10:07:25 2018 MT:   94428
+DR  Location: -2758.127 N  3241.953 E measured    542.277 secs ago
+GPS TooFar:   -2754.146 N  3240.930 E measured    41991.9 secs ago
+GPS Invalid : -2757.587 N  3241.842 E measured    642.662 secs ago
+GPS Location: -2758.127 N  3241.953 E measured    542.601 secs ago
+   sensor:c_wpt_lat(lat)=-2747                    94263.5 secs ago
+   sensor:c_wpt_lon(lon)=3248                     94263.5 secs ago
+   sensor:m_battery(volts)=14.0796653427254         4.234 secs ago
+   sensor:m_coulomb_amphr(amp-hrs)=9.90493774414062      4.399 secs ago
+   sensor:m_coulomb_amphr_total(amp-hrs)=18.6306892498627      4.414 secs ago
+   sensor:m_final_water_vx(m/s)=-0.214563081412755    6516.95 secs ago
+   sensor:m_final_water_vy(m/s)=-0.431994217446449    6516.98 secs ago
+   sensor:m_iridium_signal_strength(nodim)=5      506.452 secs ago
+   sensor:m_leakdetect_voltage(volts)=2.4982905982906       4.12 secs ago
+   sensor:m_leakdetect_voltage_forward(volts)=2.5      4.129 secs ago
+   sensor:m_lithium_battery_relative_charge(%)=87.8230789216584      4.635 secs ago
+   sensor:m_tot_num_inflections(nodim)=1286        729.04 secs ago
+   sensor:m_vacuum(inHg)=9.21175714285714          65.727 secs ago
+   sensor:m_water_vx(m/s)=-0.244929975790461      608.857 secs ago
+   sensor:m_water_vy(m/s)=-0.449989590418666      608.892 secs ago
+   sensor:u_use_current_correction(nodim)=1        1e+308 secs ago
+   sensor:x_last_wpt_lat(lat)=-2952.6059           1e+308 secs ago
+   sensor:x_last_wpt_lon(lon)=3102.6087            1e+308 secs ago
+devices:(t/m/s) errs:   1/   0/   0 warn:  17/  11/   0 odd:  42/  37/   1
+ABORT HISTORY: total since reset: 5
+ABORT HISTORY: last abort cause: MS_ABORT_USER_INTERRUPT
+ABORT HISTORY: last abort details: 
+ABORT HISTORY: last abort time: 2018-09-14T05:37:24
+ABORT HISTORY: last abort segment: socco_461-2018-256-10-0 (0334.0000)
+ABORT HISTORY: last abort mission: GINA_TRIALS.MI
+
+   Hit Control-R to RESUME the mission, i.e. dive!
+   Hit Control-C to END    the mission, i.e. GliderDos
+   Hit Control-E to extend surface time by 5 minutes.
+   Hit Control-W to get device warning reports.
+   Hit Control-F to re-read yo, goto_l, surface, sample, drift_ mafiles.
+   Hit H <n> <0:1> to Hangup and call back in <n> minutes at 0-primary 1-alternate number.
+   Hit S [-f={rf}|{irid] [-num=<n>] [-t=<s>] [filespec ...] to send log files
+   Hit ! <GliderDos cmd>  to execute <GliderDos cmd>
+   Hit Control-T to consci to science computer when comms ready:
+                                           ... communications NOT ready for consci.
+                                           ... because: sci_m_science_on = 0
+
+Water Velocity Calculations waiting for final gps fix(ideally -490 secs)
+Waypoint: (-2747.0000,3248.0000) Range: 22813m, Bearing: 48deg, Age: 26:11h:m
+Time until diving is: 279 secs
+ 94430 49 SCI:     oxy4:  Will be sending following data to glider:
+ 94433 50 SCI:           sci_oxy4_oxygen(um)
+ 94433    SCI:           sci_oxy4_saturation(%)
+ 94434    SCI:           sci_oxy4_temp(degc)
+ 94434    SCI:           sci_oxy4_calphase(deg)
+ 94434    SCI:           sci_oxy4_tcphase(deg)
+ 94435    SCI:           sci_oxy4_c1rph(deg)
+ 94435    SCI:           sci_oxy4_c2rph(deg)
+ 94435    SCI:           sci_oxy4_c1amp(mv)
+ 94435    SCI:           sci_oxy4_c2amp(mv)
+ 94435    SCI:           sci_oxy4_rawtemp(mv)
+ 94435    SCI:           sci_oxy4_timestamp(timestamp)
+ 94435    SCI:  Opening Bit(2) for output
+ 94436    SCI:Bit(2) use count is now 1.
+ 94436    SCI:Bit(2) raise count is now 0.
+ 94438 50 SCI:Bit(2) raise count is now 0.
+ 94438    SCI:PROGLET bb2flsV8 begin() called
+ 94439    SCI:   bb2flsV8: Version 0.1
+ 94439    SCI:     bb2flsV8:  Will be sending following data to glider:
+ 94440    SCI:           sci_bb2flsv8_b470_scaled(nodim)
+ 94440    SCI:           sci_bb2flsv8_b700_scaled(nodim)
+ 94440    SCI:           sci_bb2flsv8_chl_scaled(ug/l)
+ 94440    SCI:           sci_bb2flsv8_b470_sig(nodim)
+ 94440    SCI:           sci_bb2flsv8_b700_sig(nodim)
+ 94440    SCI:           sci_bb2flsv8_chl_sig(nodim)
+ 94441    SCI:           sci_bb2flsv8_b470_ref(nodim)
+ 94441    SCI:           sci_bb2flsv8_b700_ref(nodim)
+ 94443 52 SCI:           sci_bb2flsv8_chl_ref(nodim)
+ 94444    SCI:           sci_bb2flsv8_therm(nodim)
+ 94445    SCI:           sci_bb2flsv8_timestamp(timestamp)
+ 94445    SCI:  Opening Bit(0) for output
+ 94445    SCI:Bit(0) use count is now 1.
+ 94445    SCI:Bit(0) raise count is now 0.
+ 94445    SCI:Bit(0) raise count is now 0.
+ 94450 53 SCI:PROGLET house_elf start() called
+ 94450    SCI:       house_elf_run(): 0 error(s) in a row. (5 is fatal)
+ 94451    SCI:       house_elf_run(): 0 error(s) since house_elf_begin(). (50 is fatal)
+
+
+
+
+Glider socco_461 at surface.
+Because:timeout expired [behavior surface_7 start_when = 9.0]
+MissionName:100M.MI MissionNum:socco_461-2018-256-12-51 (0336.0051)
+Vehicle Name: socco_461
+Curr Time: Sat Sep 15 10:08:29 2018 MT:   94492
+DR  Location: -2758.127 N  3241.953 E measured    606.055 secs ago
+GPS TooFar:   -2754.146 N  3240.930 E measured    42055.7 secs ago
+GPS Invalid : -2757.587 N  3241.842 E measured    706.439 secs ago
+GPS Location: -2758.127 N  3241.953 E measured    606.377 secs ago
+   sensor:c_wpt_lat(lat)=-2747                    94327.2 secs ago
+   sensor:c_wpt_lon(lon)=3248                     94327.3 secs ago
+   sensor:m_battery(volts)=14.0795483811024         4.144 secs ago
+   sensor:m_coulomb_amphr(amp-hrs)=9.91087532043457       4.32 secs ago
+   sensor:m_coulomb_amphr_total(amp-hrs)=18.6366268261566      4.336 secs ago
+   sensor:m_final_water_vx(m/s)=-0.214563081412755     6580.7 secs ago
+   sensor:m_final_water_vy(m/s)=-0.431994217446449    6580.73 secs ago
+   sensor:m_iridium_signal_strength(nodim)=5      570.195 secs ago
+   sensor:m_leakdetect_voltage(volts)=2.49813797313797      4.269 secs ago
+   sensor:m_leakdetect_voltage_forward(volts)=2.4998778998779      4.286 secs ago
+   sensor:m_lithium_battery_relative_charge(%)=87.8191981528388      4.546 secs ago
+   sensor:m_tot_num_inflections(nodim)=1286        792.78 secs ago
+   sensor:m_vacuum(inHg)=9.19477142857142           4.524 secs ago
+   sensor:m_water_vx(m/s)=-0.244929975790461      672.592 secs ago
+   sensor:m_water_vy(m/s)=-0.449989590418666      672.625 secs ago
+   sensor:u_use_current_correction(nodim)=1        1e+308 secs ago
+   sensor:x_last_wpt_lat(lat)=-2952.6059           1e+308 secs ago
+   sensor:x_last_wpt_lon(lon)=3102.6087            1e+308 secs ago
+devices:(t/m/s) errs:   1/   0/   0 warn:  17/  11/   0 odd:  42/  37/   1
+ABORT HISTORY: total since reset: 5
+ABORT HISTORY: last abort cause: MS_ABORT_USER_INTERRUPT
+ABORT HISTORY: last abort details: 
+ABORT HISTORY: last abort time: 2018-09-14T05:37:24
+ABORT HISTORY: last abort segment: socco_461-2018-256-10-0 (0334.0000)
+ABORT HISTORY: last abort mission: GINA_TRIALS.MI
+
+   Hit Control-R to RESUME the mission, i.e. dive!
+   Hit Control-C to END    the mission, i.e. GliderDos
+   Hit Control-E to extend surface time by 5 minutes.
+   Hit Control-W to get device warning reports.
+   Hit Control-F to re-read yo, goto_l, surface, sample, drift_ mafiles.
+   Hit H <n> <0:1> to Hangup and call back in <n> minutes at 0-primary 1-alternate number.
+   Hit S [-f={rf}|{irid] [-num=<n>] [-t=<s>] [filespec ...] to send log files
+   Hit ! <GliderDos cmd>  to execute <GliderDos cmd>
+   Hit Control-T to consci to science computer when comms ready:
+                                               ... communications ready for consci.
+
+Water Velocity Calculations waiting for final gps fix(ideally -554 secs)
+Waypoint: (-2747.0000,3248.0000) Range: 22813m, Bearing: 48deg, Age: 26:12h:m
+Time until diving is: 215 secs
+^R 94511 65 behavior surface_7: User typed Control-R, resuming
+
+
+   I heard a Control-R
+   RESUMING MISSION
+
+Megabytes used      on CF file system = 34.375000
+Megabytes available on CF file system = 1963.593750
+ 94515    03360051.mlg LOG FILE CLOSED
+Doing system wide housekeeping.......
+report_heap_size(): M_FREE_HEAP=209.0K,  M_SPARE_HEAP=190.0K
+Running algorithm to free disk space if required
+Not necessary to delete any files at this time
 Writing longterm state disk file: c:/state/longterm.sta
-   f_ocean_pressure_min(volts) 0.088324
-   m_avg_climb_rate(m/s) -0.188153
-   m_avg_speed(m/s) 0.087039
-   m_avg_upward_inflection_time(sec) 125.640472
-   m_battery(volts) 14.610562
-   m_coulomb_amphr_total(amp-hrs) 8.734063
-   m_iridium_call_num(nodim) 846.000000
-   m_iridium_dialed_num(nodim) 2537.000000
-   m_lat(lat) -2940.212600
-   m_lon(lon) 3115.097000
+   f_ocean_pressure_min(volts) 0.086148
+   m_avg_climb_rate(m/s) -0.158849
+   m_avg_speed(m/s) 0.355761
+   m_avg_upward_inflection_time(sec) 72.363889
+   m_battery(volts) 14.079548
+   m_coulomb_amphr_total(amp-hrs) 18.640189
+   m_iridium_call_num(nodim) 896.000000
+   m_iridium_dialed_num(nodim) 2588.000000
+   m_lat(lat) -2758.127200
+   m_lon(lon) 3241.953300
    m_tot_ballast_pumped_energy(kjoules) 0.000000
-   m_tot_horz_dist(km) 570.266700
-   m_tot_num_inflections(nodim) 1238.000000
-   m_tot_num_ther
+   m_tot_horz_dist(km) 582.751757
+   m_tot_num_inflections(nodim) 1286.000000
+   m_tot_num_thermal_valve_cmd(nodim) 1224.000000
+   m_weight_drop(bool) 0.000000
+   s_water_depth_avg(m) 100.000000
+   s_water_depth_delta(m) 0.000000
+   s_water_depth_wavelength(m) 100.000000
+   x_hover_ballast_deep(cc) 0.000000
+   x_hover_ballast_shallow(cc) 0.000000
+   x_hover_depth_deep(m) 0.000000
+   x_hover_depth_shallow(m) 0.000000
+   x_last_wpt_lat(lat) -2952.605900
+   x_last_wpt_lon(lon) 3102.608700
+The instantaneous lag time between the system and gps clock is -3.0 seconds.
+The average lag time between the system and gps clock is -3.6 seconds.
+Housekeeping is done
+ 94584 69 03360052.mlg LOG FILE OPENED
+Megabytes used      on CF file system = 34.500000
+Megabytes available on CF file system = 1963.468750
+ 94586    init_gps_input()
+ 94586    behavior surface_7: SUBSTATE 7 ->9 : Turning on thruster burst
+surface_7: Turning thruster on: 6.0 V.
+ 94586    sensor: c_thruster_on = 42.6181895890198 %
+ 94590 71 sensor: c_thruster_on = 42.8602528981695 %
+ 94591    sensor: m_thruster_current = 0.6562 amp
+ 94595 71 sensor: c_thruster_on = 42.8602528981695 %
+ 94603 72 sensor: c_thruster_on = 42.8602528981695 %
+ 94604    sensor: m_thruster_current = 0.579 amp
+surface_7: Turning thruster off (secs thr on).
+ 94608 74 behavior surface_7: SUBSTATE 9 ->10 : Waiting for final gps fix
+surface_7: Waiting for final GPS fix.
+ 94613 75 disabling Iridium console...

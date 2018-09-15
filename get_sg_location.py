@@ -26,8 +26,10 @@ def update(sg):
     print("updating git...")
     print("Syncing "+sg+".json")
     cmd  = "git commit -m 'updated location' " + sg +".json"
+    cmd2  = "git commit -m 'updated location csv' " + sg +".csv"
     print(cmd)
     os.system(cmd)
+    os.system(cmd2)
     os.system("git push")
 
 
@@ -148,6 +150,10 @@ def read_NC(nc_f,sg):
     with open(outputfile, 'w') as f:
     	json.dump(data,f, cls=MyEncoder)
 
+    sgCSVpath = "/root/gliders"+sg+".csv"
+    with open(sgCSVpath, "a") as output:
+        line = "%s,%s,%s,%s\n" %(dataDict["start_time_human"],dataDict["lat"],dataDict["lon"],dataDict["dive_number"])
+        output.write(line)
     #with open(outputfile, 'w') as outfile:
     #        simplejson.dump(data, outfile, ignore_nan=True)
     #with open(outputfile, 'w') as file:
