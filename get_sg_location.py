@@ -7,6 +7,7 @@ import numpy
 import simplejson
 import codecs
 import json
+import csv
 from netCDF4 import Dataset
 
 
@@ -33,8 +34,16 @@ def update(sg):
     os.system(cmd2)
     os.system("git push")
 
+def removeDupes(file):
+#Removes duplicate rows from csv
+    rows = csv.reader(open(file, "r"))
+    newrows = []
+    for row in rows:
+        if row not in newrows:
+            newrows.append(row)
+    writer = csv.writer(open(file, "w"))
+    writer.writerows(newrows)
 
-#convert to DD.DDD
 def convertDecimalDegrees(coord):
 	lenghtOfDegrees = len(coord)-6
 	degrees = float(coord[:lenghtOfDegrees])
@@ -156,6 +165,8 @@ def read_NC(nc_f,sg):
         line = "%s,%s,%s,%s\n" %(dataDict["start_time_human"],dataDict["lat"],dataDict["lon"],dataDict["dive_number"])
         print("add csv line: " + line+ "\nTo: "+ sgCSVpath)
         output.write(line)
+    #lazily remove duplicates from the CSV
+    removeDupes(sgCSVpath)
     #with open(outputfile, 'w') as outfile:
     #        simplejson.dump(data, outfile, ignore_nan=True)
     #with open(outputfile, 'w') as file:
