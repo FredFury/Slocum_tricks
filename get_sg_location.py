@@ -151,10 +151,10 @@ def read_NC(nc_f,sg):
     with open(outputfile, 'w') as f:
     	json.dump(data,f, cls=MyEncoder)
 
-    sgCSVpath = "/root/gliders"+sg+".csv"
+    sgCSVpath = "/root/gliders/"+sg+".csv"
     with open(sgCSVpath, "a") as output:
         line = "%s,%s,%s,%s\n" %(dataDict["start_time_human"],dataDict["lat"],dataDict["lon"],dataDict["dive_number"])
-        print(line)
+        print("add csv line: " + line+ "\nTo: "+ sgCSVpath)
         output.write(line)
     #with open(outputfile, 'w') as outfile:
     #        simplejson.dump(data, outfile, ignore_nan=True)
