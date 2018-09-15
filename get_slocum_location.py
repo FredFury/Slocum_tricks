@@ -33,6 +33,17 @@ def convertISO2DecimalDegrees(coord):
 	dd = degrees + decimalOfDegree
 	return dd
 
+def removeDupes(file):
+#Removes duplicate rows from csv
+    rows = csv.reader(open(file, "r"))
+    newrows = []
+    for row in rows:
+        if row not in newrows:
+            newrows.append(row)
+    writer = csv.writer(open(file, "w"))
+    writer.writerows(newrows)
+
+
 def retrieve(address,output):
     print ("Retrieving files...")
     print(address)
@@ -99,6 +110,7 @@ def findData(data_file,log_file):
     csv = open("slocum.csv",'a')
     csv.write(row)
     csv.close()
+    removeDupes("slocum.csv")
     # Generate some GEOJSON data
     # Create GEOJSON point of current glider location:
     pointMarker = Point((convertISO2DecimalDegrees(lon),convertISO2DecimalDegrees(lat)))
