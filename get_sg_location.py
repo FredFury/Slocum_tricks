@@ -153,6 +153,7 @@ def read_NC(nc_f,sg):
     sgCSVpath = "/root/gliders"+sg+".csv"
     with open(sgCSVpath, "a") as output:
         line = "%s,%s,%s,%s\n" %(dataDict["start_time_human"],dataDict["lat"],dataDict["lon"],dataDict["dive_number"])
+        print(line)
         output.write(line)
     #with open(outputfile, 'w') as outfile:
     #        simplejson.dump(data, outfile, ignore_nan=True)
