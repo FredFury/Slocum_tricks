@@ -1,7 +1,7 @@
 import os
 import urllib.request
 import ftplib
-from xml.etree import ElementTree as ET
+from lxml import etree
 import urllib
 import time
 import glob
@@ -106,8 +106,25 @@ def findData(data_file,log_file):
             vacuum = line.split("=")[1].split("  ")[0]
 
     log_file_end = log_file+"\n"
+    
+	# Get info from the XML
+    tree = etree.parse("/root/gliderState.xml")
+    #print("XML data:")
+    p = tree.xpath('/gliderState/writeTrack/dataParameters/dataParameter')
+    for param in p:
+        if(param.find("name").text == "Next waypoint coordinates"):
+            wpLat = param.find("value").text.split(',')[0].strip("(")
+            wpLon = param.find("value").text.split(',')[1].strip(")")
+            #print(wpLat)
+            #print(wpLon)
+        if(param.find("name").text == "Next waypoint range"):
+            wpDistance = param.find("value").text
+        if(param.find("name").text == "Next waypoint bearing"):
+            wpHeading = param.find("value").text
+
+
     # Generate CSV
-    row = ",".join((glider_name,mission,time,lat,lon,battery_voltage,battery_charge,wp_lat,wp_lon,coulomb_amphr_total,leakdetect,leakdetect_forward,log_file_end))
+    row = ",".join((glider_name,mission,time,lat,lon,battery_voltage,battery_charge,wp_lat,wp_lon,coulomb_amphr_total,leakdetect,leakdetect_forward,wpLat,wpLon,wpDistance,wpHeading,log_file_end))
     print (row)
     csv = open("slocum.csv",'a')
     csv.write(row)
@@ -188,10 +205,13 @@ def main():
     list_file = "list"
     address = 'ftp://%s:%s@%s%s' % (username,password,host,path)
     #print "Getting file listing from: " + address + list_file
-
-
-    # Retrieve a list of files
-    retrieve(address,list_file) ##
+    #Retrieve a list of files
+    retrieve(address,list_file)  
+ 
+    xml_address = "/gliders/socco_461/gliderState.xml"
+    xml_path = "/root/gliderState.xml"
+    address = 'ftp://%s:%s@%s%s' % (username,password,host,xml_address)
+    retrieve(address,xml_path)
 
     # read a text file as a list of lines
     # find the last line, change to a file you have
@@ -203,7 +223,7 @@ def main():
     address = 'ftp://%s:%s@%s%s%s' % (username,password,host,path,last_file)
     retrieve(address,output)
     #print address, output
-
+    
     findData(output,last_file) ## scrape a log and append the data to a CSV
     update()
     ##checkifrecent()
