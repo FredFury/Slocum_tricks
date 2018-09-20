@@ -5,7 +5,9 @@ import io
 import numpy
 import urllib.request
 from datetime import datetime
+import numpy as np
 import matplotlib.pyplot as plt
+import matplotlib.dates as mdates
 import matplotlib.ticker as ticker
 
 def getData():
@@ -26,6 +28,7 @@ def getData():
 def plotData(dataT,dataVoltage,dataCharge):
     #print(dataT[0],dataVoltage[0])
     #print(dataT[-1],dataVoltage[-1])
+
 
     #Volage plot
     ###############################################
@@ -48,6 +51,11 @@ def plotData(dataT,dataVoltage,dataCharge):
     plt.title(subTitle,fontsize=10)
     plt.grid(color='grey', linestyle='-', linewidth=0.5)
     plt.plot(dataT,dataVoltage)
+    # Add trendline
+    #endDate =datetime.strptime("20181023T000000","%Y%m%dT%H%M%S")
+
+
+    #plt.show()
     plt.savefig("/var/www/html/images/voltage.png")
     plt.clf()
     plt.cla()
@@ -55,6 +63,7 @@ def plotData(dataT,dataVoltage,dataCharge):
 
     #Charge plot
     ###############################################
+    ax = plt.axes()
     # Set up the X-axis
     plt.xticks(fontsize=6)
     plt.xlabel("TIME")
@@ -69,6 +78,7 @@ def plotData(dataT,dataVoltage,dataCharge):
     plt.title(subTitle,fontsize=10)
     plt.grid(color='grey', linestyle='-', linewidth=0.5)
     plt.plot(dataT,dataCharge,color='red')
+    #plt.show()
     plt.savefig("/var/www/html/images/charge.png")
 
 def main():
