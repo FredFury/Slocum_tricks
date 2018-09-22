@@ -10,6 +10,24 @@ import json
 import csv
 from netCDF4 import Dataset
 
+lat = 0
+lon = 0
+gpsTime = 0
+
+#convert to DD.DDD
+def convertISO2DecimalDegrees(coord):
+        lenghtOfDegrees = len(coord)-6
+        degrees = float(coord[:lenghtOfDegrees])
+        number1 = coord.split(".")[0][-2:]
+        number2 = coord.split(".")[1]
+        decimalMinutes = number1 + "." + number2
+        decimalMinutes = float(decimalMinutes)
+        decimalOfDegree = decimalMinutes/60
+        if degrees < 0:
+                decimalOfDegree = decimalOfDegree * -1.0
+        #print degrees,decimalOfDegree
+        dd = degrees + decimalOfDegree
+        return dd
 
 class MyEncoder(json.JSONEncoder):
     def default(self, obj):
@@ -28,16 +46,10 @@ def update(sg):
     print("Syncing "+sg+".json")
     cmd  = "git commit -m 'updated location' " + sg +".json"
     cmd2  = "git commit -m 'updated location csv' " + sg +".csv"
-    cmd3  = "git commit -m 'updated cmdfile' " + sg +"cmdfile"
-    cmd4  = "git commit -m 'updated targets' " + sg +"targets"
     print(cmd)
     os.system(cmd)
     print(cmd2)
     os.system(cmd2)
-    print(cmd3)
-    os.system(cmd3)
-    print(cmd4)
-    os.system(cmd4)
     os.system("git push")
 
 def removeDupes(file):
@@ -76,6 +88,9 @@ def retrieveFile(sg):
     f.close()
     transport.connect(username = username, password = password)
     sftp = paramiko.SFTPClient.from_transport(transport)
+    ssh = paramiko.SSHClient()
+    ssh.load_system_host_keys()
+    ssh.connect(host, username=username, password=password)
 
     path = '/home/'+sg+'/'
     fileList = sftp.listdir(path)
@@ -91,6 +106,18 @@ def retrieveFile(sg):
     outputFile = sg+"data.nc"
     cmdfile = sg+"cmdfile"
     targetsfile = sg+"targets"
+    readcommlog = "cd /home/"+sg+" && grep 'GPS,' comm.log | tail -n 1"
+    (stdin, stdout, stderr) = ssh.exec_command(readcommlog)
+    for line in stdout.readlines():
+        print(line)
+        global lat
+        lat = line.split(" ")[1].split(",")[3]
+        global lon
+        lon =  line.split(" ")[1].split(",")[4]
+        global time
+        gpsTime = line.split(" ")[1].split(",")[1] + line.split(" ")[1].split(",")[2]
+        #print(line.split(" ")[1].split(",")[1])
+
     sftp.get(path+targetFile,outputFile)
     sftp.get(path+"cmdfile",cmdfile)
     try: # There may not be a targets file
@@ -110,8 +137,9 @@ def read_NC(nc_f,sg):
     dataDict["project"] = nc_fid.project
     dataDict["platform_id"] = nc_fid.platform_id
     dataDict["glider"] = int(nc_fid.glider)
-    dataDict["lat"] = nc_fid.geospatial_lat_min
-    dataDict["lon"] = nc_fid.geospatial_lon_min
+    dataDict["gpsTime"] = datetime.datetime.fromtimestamp(gpsTime).strftime('%d%m%y%H%M%S') #220918,125554
+    dataDict["lat"] = lat 
+    dataDict["lon"] = lon   
     dataDict["instruments"] = nc_fid.instrument
     dataDict["dive_number"] = int(nc_fid.dive_number)
     dataDict["start_time"] = int(nc_fid.start_time)
@@ -138,6 +166,27 @@ def read_NC(nc_f,sg):
     dataDict["sim_pitch"] = int(nc_fid.variables["log_SIM_PITCH"][:])
     dataDict["max_buoy"] = int(nc_fid.variables["log_MAX_BUOY"][:])
     #print nc_fid.variables["gc_roll_retries"][:]
+    dataDict["gc_roll_retries"] = sum(nc_fid.variables["gc_roll_retries"][:])
+    dataDict["gc_roll_errors"] = sum(nc_fid.variables["gc_roll_errors"][:])
+    dataDict["gc_pitch_retries"] = sum(nc_fid.variables["gc_pitch_retries"][:])
+    dataDict["gc_pitch_errors"] = sum(nc_fid.variables["gc_pitch_errors"][:])
+    dataDict["gc_vbd_retries"] = sum(nc_fid.variables["gc_vbd_retries"][:])
+    dataDict["gc_vbd_errors"] = sum(nc_fid.variables["gc_vbd_errors"][:])
+
+    # Let's add the CMDFILE and TARGETS file details:
+    cmdfile = sg+"cmdfile"
+    targetsfile = sg +"targets"
+    with open(cmdfile) as fp:  
+        line = fp.readline()
+        if(line.split(",")[0] == "$D_TGT"):
+            dataDict["d_tgt"] = int(line.split(",")[1])
+    with open(targetsfile) as fp:  
+        line = fp.readline()
+        if(line.split(" ")[1].split("=")[0] == "lat"):
+            dataDict["wp_lat"] = line.split(" ")[1].split("=")[1]
+        if(line.split(" ")[2].split("=")[0] == "lon"):
+            dataDict["wp_lon"] = line.split(" ")[2].split("=")[1]
+
     dataDict["gc_roll_retries"] = sum(nc_fid.variables["gc_roll_retries"][:])
     dataDict["gc_roll_errors"] = sum(nc_fid.variables["gc_roll_errors"][:])
     dataDict["gc_pitch_retries"] = sum(nc_fid.variables["gc_pitch_retries"][:])
@@ -175,7 +224,7 @@ def read_NC(nc_f,sg):
 
     sgCSVpath = "/root/gliders/"+sg+".csv"
     with open(sgCSVpath, "a") as output:
-        line = "%s,%s,%s,%s\n" %(dataDict["start_time_human"],dataDict["lat"],dataDict["lon"],dataDict["dive_number"])
+        line = "%s,%s,%s,%s\n" %(dataDict["start_time_human"],convertISO2DecimalDegrees(dataDict["lat"]),convertISO2DecimalDegrees(dataDict["lon"]),dataDict["dive_number"])
         print("add csv line: " + line+ "\nTo: "+ sgCSVpath)
         output.write(line)
     #lazily remove duplicates from the CSV
