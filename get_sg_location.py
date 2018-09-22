@@ -28,10 +28,13 @@ def update(sg):
     print("Syncing "+sg+".json")
     cmd  = "git commit -m 'updated location' " + sg +".json"
     cmd2  = "git commit -m 'updated location csv' " + sg +".csv"
+    cmd3  = "git commit -m 'updated cmdfile' " + sg +"cmdfile"
     print(cmd)
     os.system(cmd)
     print(cmd2)
     os.system(cmd2)
+    print(cmd3)
+    os.system(cmd3)
     os.system("git push")
 
 def removeDupes(file):
@@ -83,7 +86,9 @@ def retrieveFile(sg):
     files.sort()
     targetFile = files[-1]
     outputFile = sg+"data.nc"
+    cmdfile = sg+"cmdfile"
     sftp.get(path+targetFile,outputFile)
+    sftp.get(path+"cmdfile",cmdfile)
     sftp.close()
     transport.close()
 
