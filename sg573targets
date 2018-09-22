@@ -1,0 +1,2 @@
+INSHORE lat=-2938.358 lon=3139.344 radius=200 goto=OFFSHORE
+OFFSHORE lat=-2932.770 lon=3206.947 radius=200 goto=INSHORE
