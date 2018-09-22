@@ -29,12 +29,15 @@ def update(sg):
     cmd  = "git commit -m 'updated location' " + sg +".json"
     cmd2  = "git commit -m 'updated location csv' " + sg +".csv"
     cmd3  = "git commit -m 'updated cmdfile' " + sg +"cmdfile"
+    cmd4  = "git commit -m 'updated targets' " + sg +"targets"
     print(cmd)
     os.system(cmd)
     print(cmd2)
     os.system(cmd2)
     print(cmd3)
     os.system(cmd3)
+    print(cmd4)
+    os.system(cmd4)
     os.system("git push")
 
 def removeDupes(file):
@@ -87,8 +90,13 @@ def retrieveFile(sg):
     targetFile = files[-1]
     outputFile = sg+"data.nc"
     cmdfile = sg+"cmdfile"
+    targetsfile = sg+"targets"
     sftp.get(path+targetFile,outputFile)
     sftp.get(path+"cmdfile",cmdfile)
+    try: # There may not be a targets file
+    	sftp.get(path+"targets",targetsfile)
+    except:
+        print("No targets file found")
     sftp.close()
     transport.close()
 
