@@ -180,12 +180,16 @@ def read_NC(nc_f,sg):
         line = fp.readline()
         if(line.split(",")[0] == "$D_TGT"):
             dataDict["d_tgt"] = int(line.split(",")[1])
-    with open(targetsfile) as fp:  
-        line = fp.readline()
-        if(line.split(" ")[1].split("=")[0] == "lat"):
-            dataDict["wp_lat"] = line.split(" ")[1].split("=")[1]
-        if(line.split(" ")[2].split("=")[0] == "lon"):
-            dataDict["wp_lon"] = line.split(" ")[2].split("=")[1]
+    try:
+        with open(targetsfile) as fp:  
+            line = fp.readline()
+            if(line.split(" ")[1].split("=")[0] == "lat"):
+                dataDict["wp_lat"] = line.split(" ")[1].split("=")[1]
+            if(line.split(" ")[2].split("=")[0] == "lon"):
+                dataDict["wp_lon"] = line.split(" ")[2].split("=")[1]
+    except:
+         dataDict["wp_lat"] = "0"
+         dataDict["wp_lat"] =  "0"
 
     dataDict["gc_roll_retries"] = sum(nc_fid.variables["gc_roll_retries"][:])
     dataDict["gc_roll_errors"] = sum(nc_fid.variables["gc_roll_errors"][:])
