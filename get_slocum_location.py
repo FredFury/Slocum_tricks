@@ -22,7 +22,11 @@ def update():
 
 #convert to DD.DDD
 def convertISO2DecimalDegrees(coord):
-	lenghtOfDegrees = len(coord)-6
+	print (coord)
+	if(len(coord) == 6):
+		lenghtOfDegrees = len(coord)-4
+	else:
+		lenghtOfDegrees = len(coord)-6
 	degrees = float(coord[:lenghtOfDegrees])
 	number1 = coord.split(".")[0][-2:]
 	number2 = coord.split(".")[1]
