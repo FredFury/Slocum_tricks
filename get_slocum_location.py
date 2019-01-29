@@ -1,3 +1,4 @@
+
 import os
 import urllib.request
 import ftplib
@@ -14,7 +15,7 @@ import os
 #send file to FTP server
 def update():
     print ("updating slocum.geojson to git...")
-    os.system("git commit -m 'updated location' slocum.geojson")
+    #os.system("git commit -m 'updated location' slocum.geojson")
     os.system("git commit -m 'update slocum surface data' surface.dat")
     print ("updateing slocum.csv to git...")
     os.system("git commit -m 'update slocum csv' slocum.csv")
@@ -23,20 +24,32 @@ def update():
 #convert to DD.DDD
 def convertISO2DecimalDegrees(coord):
 	print (coord)
-	if(len(coord) == 6):
-		lenghtOfDegrees = len(coord)-4
-	else:
-		lenghtOfDegrees = len(coord)-6
-	degrees = float(coord[:lenghtOfDegrees])
+	isNeg = False
+	if(coord[0] == '-'):
+		isNeg = True
+		coord = coord[1:]
+
+	#print(len(coord))	 
+	if(len(coord) < 8):
+		leadingZeros = "0"
+		leadingZerosNum = 8 - len(coord) - 1
+		for z in range(leadingZerosNum):
+			leadingZeros = leadingZeros + "0"
+		coord = leadingZeros + coord
+	#print (coord)
+	degrees = float(coord[:2])
 	number1 = coord.split(".")[0][-2:]
 	number2 = coord.split(".")[1]
 	decimalMinutes = number1 + "." + number2
 	decimalMinutes = float(decimalMinutes)
 	decimalOfDegree = decimalMinutes/60
-	if degrees < 0:
-		decimalOfDegree = decimalOfDegree * -1.0
-	#print degrees,decimalOfDegree
+
 	dd = degrees + decimalOfDegree
+
+	if isNeg == True:
+		dd = dd * -1.0
+	#print degrees,decimalOfDegree
+	print (dd)
 	return dd
 
 def removeDupes(file):
