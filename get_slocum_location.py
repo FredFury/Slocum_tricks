@@ -15,7 +15,7 @@ import os
 #send file to FTP server
 def update():
     print ("updating slocum.geojson to git...")
-    #os.system("git commit -m 'updated location' slocum.geojson")
+    os.system("git commit -m 'updated location' slocum.geojson")
     os.system("git commit -m 'update slocum surface data' surface.dat")
     print ("updateing slocum.csv to git...")
     os.system("git commit -m 'update slocum csv' slocum.csv")
